@@ -1,0 +1,32 @@
+{% if paged_pages() > 1 %}
+    {% set start_page = paged_page() - 4 %}
+    {% set end_page = paged_page() + 4 %}
+    {% if start_page < 1 %}
+      {% set start_page = 1 %}
+    {% endif %}
+    {% if end_page > paged_pages() %}
+      {% set end_page = paged_pages() %}
+    {% endif %}
+    <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+        {% if paged_page() == 1 %}
+            <li class="disabled"><i class="fa fa-angle-double-left"></i></li>
+        {% else %}
+            <li><a href="{{ pagenum_link() }}"><i class="fa fa-angle-double-left"></i></a></li>
+        {% endif %}
+
+        {% for i in start_page..end_page %}
+            {% if i == paged_page() %}
+                <li class="current"><span class="show-for-sr">You're on page</span> {{ paged_page() }}</li>
+            {% else %}
+                <li><a href="{{ pagenum_link(i) }}" aria-label="Page {{ i }}">{{ i }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if paged_page() == paged_pages() %}
+            <li class="disabled"><i class="fa fa-angle-double-right"></i></li>
+        {% else %}
+            <li><a href="{{ pagenum_link(paged_pages()) }}"><i class="fa fa-angle-double-right"></i></a></li>
+        {% endif %}
+
+    </ul>
+{% endif %}

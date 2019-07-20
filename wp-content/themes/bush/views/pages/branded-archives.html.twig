@@ -1,0 +1,26 @@
+{% extends 'template/main.html.twig' %}
+{% block content %}
+    {% if tax_content %}
+        <section class="branded-section" style="background-color: {{tax_content['bg_color']}};">
+            <div class="description" style="color: {{tax_content['font_color']}}; font-family: {{tax_content['font_family']}}; font-size: {{tax_content['font_size']}}px;">
+                {% if tax_content['logo'] %}
+                    <img src="{{tax_content['logo']['sizes']['sponsor-sides']}}" alt="{{tax_content['logo']['alt']}}" align="left" class="branded-logo">
+                {% endif %}
+                <h1 style="color: {{tax_content['font_color']}}; font-family: {{tax_content['header_font_family']}};">{{ tax_content['title'] | raw }}</h1>
+                {{tax_content['description'] | raw }}
+            </div>
+            <div class="branded-photos">
+                <figure class="sponsor-left"><img src="{{tax_content['left']['sizes']['sponsor-sides']}}" alt="{{tax_content['logo']['alt']}}" ></figure>
+                <figure class="sponsor-middle"><img src="{{tax_content['center']['sizes']['sponsor-middle']}}" alt="{{tax_content['logo']['alt']}}"></figure>
+                <figure class="sponsor-right"><img src="{{tax_content['right']['sizes']['sponsor-sides']}}" alt="{{tax_content['logo']['alt']}}"></figure>
+            </div>
+        </section>
+    {% endif %}
+    {% if content %}
+          <h2>{{ tax_content['title'] | raw }} Recipies</h2>
+        {% include 'partials/related.html.twig' with {'related': content, 'related_title': false, 'grid_sizes': [1, 2, 4] }%}
+        {% include 'partials/pagination.html.twig' %}
+    {% else %}
+        <h1>Nothing Found</h1>
+    {% endif %}
+{% endblock %}

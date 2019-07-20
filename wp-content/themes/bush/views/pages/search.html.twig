@@ -1,0 +1,13 @@
+{% extends 'template/main.html.twig' %}
+{% set related_title = false %}
+{% block content %}
+    {% if content %}
+        <h1>{{ title }}</h1>
+        {% include 'partials/related.html.twig' with {"related": content, "grid_sizes": [1, 2, 4]} %}
+        {% include 'partials/pagination.html.twig' %}
+    {% else %}
+        <div class="row column">
+            <h1>Nothing Found</h1>
+        </div>
+    {% endif %}
+{% endblock %}

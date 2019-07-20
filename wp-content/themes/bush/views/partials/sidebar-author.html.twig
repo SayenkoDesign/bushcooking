@@ -1,0 +1,126 @@
+<div id="author-sidebar">
+    <div id="author-profile-pic">
+        {{ the_author_avatar(400, author.id) }}
+    </div>
+    <div itemscope itemtype="http://schema.org/Person" class="author-schema">
+        <h4 itemprop="name">{{ author.name }}</h4>
+
+        {% if author.brand %}
+            <span class="itemprop"><b>Brand:</b> <span itemprop="brand">{{ author.brand | raw }} </span></span><br>
+        {% endif %}
+
+        {% if author.hasOccupation %}
+            <span class="itemprop"><b>Occupation:</b> <span itemprop="hasOccupation">{{ author.hasOccupation | raw }}</span></span><br>
+        {% endif %}
+
+        {% if author.knowsAbout %}
+            <span class="itemprop"><b>Areas of Expertise:</b> <span itemprop="knowsAbout">{{ author.knowsAbout | raw }}</span></span><br>
+        {% endif %}
+
+        {% if author.affiliation %}
+            <span class="itemprop"><b>Affiliations:</b> <span itemprop="affiliation">{{ author.affiliation | raw }} </span></span><br>
+        {% endif %}
+
+        {% if author.sponsor %}
+            <span class="itemprop"><b>Sponsors:</b> <span itemprop="sponsor">{{ author.sponsor | raw }}</span></span><br>
+        {% endif %}
+
+        {% if author.memberOf %}
+            <span class="itemprop"><b>Member Of:</b> <span itemprop="memberOf">{{ author.memberOf | raw }}</span></span><br>
+        {% endif %}
+
+        {% if author.author %}
+            <span class="itemprop"><b>Author:</b> <span itemprop="author">{{ author.author | raw }} </span></span><br>
+        {% endif %}
+
+        {% if author.appearedIn %}
+            <span class="itemprop"><b>Appeared in:</b> <span itemprop="actor">{{ author.appearedIn | raw }} </span></span><br>
+        {% endif %}
+
+        {% if author.awards %}
+            <span class="itemprop"><b>Awards:</b> <span itemprop="awards">{{ author.awards | raw }} </span></span><br>
+        {% endif %}
+
+        {% if author.homeLocation %}
+            <span class="itemprop"><b>Hometown:</b> <span itemprop="homeLocation">{{ author.homeLocation | raw }}</span></span><br>
+        {% endif %}
+
+        {% if author.gender %}
+            <span class="itemprop"><b>Gender:</b> <span itemprop="gender">{{ author.gender | raw }} </span></span><br>
+        {% endif %}
+
+        {% if author.email %}
+            <span class="itemprop"><b>Email:</b> <a href="mailto:{{ author.email }}" target="_blank" itemprop="email">{{ author.email }} </a></span><br>
+        {% endif %}
+
+    </div>
+    {% if author.website or author.google or author.twitter or author.facebook or author.linkedin or author.pinterest or author.instagram %}
+        <div id="author-social">
+            <h4>Find me on</h4>
+            {% if author.website %}
+                <a href="{{ author.website }}" rel="nofollow" target="_blank" class="web">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                        <i class="fa fa-globe fa-stack-1x"></i>
+                    </span>
+                </a>
+            {% endif %}
+            {% if author.google %}
+                <a href="{{ author.google }}" rel="nofollow" target="_blank" class="google-plus">
+                        <span class="fa-stack fa-2x">
+                            <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                            <i class="fa fa-google-plus fa-stack-1x"></i>
+                        </span>
+                </a>
+            {% endif %}
+            {% if author.twitter %}
+                <a href="{{ author.twitter }}" rel="nofollow" target="_blank" class="twitter">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                        <i class="fa fa-twitter fa-stack-1x"></i>
+                    </span>
+                </a>
+            {% endif %}
+            {% if author.facebook %}
+                <a href="{{ author.facebook }}" rel="nofollow" target="_blank" class="facebook">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                        <i class="fa fa-facebook fa-stack-1x"></i>
+                    </span>
+                </a>
+            {% endif %}
+            {% if author.linkedin %}
+                <a href="{{ author.linkedin }}" rel="nofollow" target="_blank" class="linkedin">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                        <i class="fa fa-linkedin fa-stack-1x"></i>
+                    </span>
+                </a>
+            {% endif %}
+            {% if author.pinterest %}
+                <a href="{{ author.pinterest }}" rel="nofollow" target="_blank" class="pinterest">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                        <i class="fa fa-pinterest fa-stack-1x"></i>
+                    </span>
+                </a>
+            {% endif %}
+            {% if author.instagram %}
+                <a href="{{ author.instagram }}" rel="nofollow" target="_blank" class="instagram">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                        <i class="fa fa-instagram fa-stack-1x"></i>
+                    </span>
+                </a>
+            {% endif %}
+            {% if author.youtube %}
+                <a href="{{ author.youtube }}" rel="nofollow" target="_blank" class="youtube">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                        <i class="fa fa-youtube fa-stack-1x"></i>
+                    </span>
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
