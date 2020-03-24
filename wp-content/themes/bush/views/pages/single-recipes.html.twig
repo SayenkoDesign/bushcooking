@@ -46,7 +46,6 @@
         </div>
         <div class="large-8 columns">
             <h1 itemprop="name">{{ the_title() }}</h1>
-            <time class="hide" datetime="2009-11-05">{{ the_date() | date('Y-m-d') }}</time>
             {% if rating and rating_count %}
                 <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="hide">
                     <span itemprop="ratingValue">{{ rating }}</span>

@@ -143,6 +143,12 @@
     }
   }
 }
+
+.menu-main-container,
+.main-menu-container {
+	display: none;
+}
+
 .shrink #primary-navigation {
   height: 0;
   padding: 0;
@@ -157,6 +163,7 @@
     padding: 0;
   }
   .top-bar-center {
+	  
     a {
       padding-right: rem-calc(20px);
       padding-left: rem-calc(20px);
@@ -228,6 +235,7 @@
     }
   }
   #primary-menu-toggle {
+	  opacity: 0;
     padding-right: 16px;
     button {
       top: -12px;

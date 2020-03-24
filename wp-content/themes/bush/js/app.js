@@ -6,6 +6,11 @@
 ga('create', 'UA-73280214-1', 'auto');
 
 jQuery(function() {
+	
+	$('.menu-main-container').css('display', 'block');
+	$('.main-menu-container ').css('display', 'block');
+	$('#primary-navigation #primary-menu-toggle').css('opacity', '1');
+	
     $('#primary-nav').attr({
         'class': 'dropdown menu',
         'data-dropdown-menu': true
