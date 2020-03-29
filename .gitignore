@@ -122,7 +122,3 @@ wp-content/mysql.sql
 *.asf
 *.wmv
 *.avi
-
-wp-content/themes/raymark/gulpfile\.js
-
-*.json
