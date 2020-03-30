@@ -641,3 +641,12 @@ function wpse_29570_where_filter($where){
 
     add_filter('posts_where','wpse_29570_where_filter');
 */
+
+
+
+function gioga_add_defer_attribute($tag, $handle) {
+	if ( 'googleapis' === $handle )
+	return $tag;
+	return str_replace( ' src', ' defer src', $tag );
+}
+add_filter('script_loader_tag', 'gioga_add_defer_attribute', 10, 2);
