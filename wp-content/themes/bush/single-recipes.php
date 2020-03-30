@@ -263,6 +263,7 @@ while (have_posts()) {
     $total_hours = floor($total / 60);
     $total_minutes = ($total % 60);
     $total_total = $total_hours * 60 + $total_minutes;
+    $pinterest_images = get_field( 'pinterest_images' );
 
 	echo $app->render('pages/single-recipes.html.twig', [
 		'author' => $author,
@@ -293,6 +294,8 @@ while (have_posts()) {
 		'total_hours' => $total_hours,
 		'total_minutes' => $total_minutes,
 		'total_total_minutes' => $total_total,
+        'pinterest_images' => $pinterest_images
 	]);
+
 }
 get_footer();

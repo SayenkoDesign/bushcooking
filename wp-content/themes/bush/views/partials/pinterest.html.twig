@@ -1,0 +1,8 @@
+{% if pinterest_images %}
+    <div class="pinterest-photos hide-for-small show-for-large">
+        {% for image in pinterest_images %}
+            <img src="{{ image['sizes']['large'] }}" alt="{{ image['alt'] }}" itemprop="image" style="margin-bottom: 30px;" />
+        {% endfor %}
+    </div>
+{% endif %}
+

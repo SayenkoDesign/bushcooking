@@ -226,3 +226,10 @@
   .st_print_large .stLarge { background-position: -175px !important;}
   .st_email_large .stLarge { background-position: -209px !important; }
 }
+
+
+@include breakpoint(medium only) {
+    .pinterest-photos {
+        margin-top: rem-calc(30);
+    }
+}
