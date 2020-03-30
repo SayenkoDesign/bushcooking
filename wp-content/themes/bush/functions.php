@@ -486,7 +486,7 @@ function social_media_shortcode() {
 //   echo '<span class="st_googleplus_large" displayText="Google +"></span>';
 //   echo '</div>';
 //   echo '<script type="text/javascript">var switchTo5x=true;</script>';
-//   echo '<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>';
+//   echo '<script type="text/javascript" defer src="https://ws.sharethis.com/button/buttons.js"></script>';
 //   echo '<script type="text/javascript">';
 //   echo 'stLight.options({';
 //   echo 'publisher: "' . the_field("sharethis_api_key", "option") . ',';
@@ -618,7 +618,7 @@ add_action( 'pre_get_posts', 'exclude_posts_from_category', 1 );
 function prefix_production_url( $url ) {
 	return 'https://bushcooking.com/';
 }
-add_filter( 'be_media_from_production_url', 'prefix_production_url' );
+//add_filter( 'be_media_from_production_url', 'prefix_production_url' );
 
 
 
