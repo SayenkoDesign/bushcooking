@@ -135,13 +135,6 @@
             {{ do_shortcode('[sponsored_ad]') }}
         </div>
     </div>
-    {% if pinterest_images %}
-        <div class="pinterest-photos hide-for-medium">
-            {% for image in pinterest_images %}
-                <img src="{{ image['sizes']['large'] }}" alt="{{ image['alt'] }}" itemprop="image" style="margin-bottom: 30px;" />
-            {% endfor %}
-        </div>
-    {% endif %}
     {% include 'partials/related.html.twig' %}
     {{ comments_template() }}
 {% endblock %}

@@ -486,7 +486,7 @@ function social_media_shortcode() {
 //   echo '<span class="st_googleplus_large" displayText="Google +"></span>';
 //   echo '</div>';
 //   echo '<script type="text/javascript">var switchTo5x=true;</script>';
-//   echo '<script type="text/javascript" defer src="https://ws.sharethis.com/button/buttons.js"></script>';
+//   echo '<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>';
 //   echo '<script type="text/javascript">';
 //   echo 'stLight.options({';
 //   echo 'publisher: "' . the_field("sharethis_api_key", "option") . ',';
@@ -613,40 +613,3 @@ function exclude_posts_from_category( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'exclude_posts_from_category', 1 );
-
-// BE Media From Production
-function prefix_production_url( $url ) {
-	return 'https://bushcooking.com/';
-}
-//add_filter( 'be_media_from_production_url', 'prefix_production_url' );
-
-
-
-
-/*
-function wpse_29570_where_filter($where){
-        global $wpdb;
-        if( is_search() ) {
-            $search= get_query_var('s');
-            $query=$wpdb->prepare("SELECT user_id  FROM $wpdb->usermeta WHERE ( meta_key='first_name' AND meta_value LIKE '%%%s%%' ) or ( meta_key='last_name' AND meta_value LIKE '%%%s%%' )", $search ,$search);
-            $authorID= $wpdb->get_var( $query );
-
-            if($authorID){
-                $where = "  AND  ( wp_posts.post_author = {$authorID} ) ";
-            }
-
-         }
-         return $where;
-    }
-
-    add_filter('posts_where','wpse_29570_where_filter');
-*/
-
-
-
-function gioga_add_defer_attribute($tag, $handle) {
-	if ( 'googleapis' === $handle )
-	return $tag;
-	return str_replace( ' src', ' defer src', $tag );
-}
-add_filter('script_loader_tag', 'gioga_add_defer_attribute', 10, 2);

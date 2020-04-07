@@ -1,0 +1,21 @@
+{
+    "name": "sayenkodesign/bush",
+    "description": "WordPress theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robert M. Parker",
+            "email": "rparker@yamiko.ninja"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bush\\": "classes/"
+        }
+    },
+    "require": {
+        "pimple/pimple": "^3.0",
+        "twig/twig": "^1.23",
+        "symfony/yaml": "^3.0"
+    }
+}
