@@ -135,6 +135,25 @@
             {{ do_shortcode('[sponsored_ad]') }}
         </div>
     </div>
+    {% if pinterest_images %}
+        <style>
+        .pinterest-photos {
+            margin-left: -7.5px!important;
+            margin-right: -7.5px!important;
+        }
+        
+        .pinterest-photos .columns {
+            padding-left: 7.5px!important;
+            padding-right: 7.5px!important;
+        }
+       
+        </style>
+        <div class="pinterest-photos hide-for-medium row">
+            {% for image in pinterest_images %}
+                <div class="small-6 large-6 columns"><img src="{{ image['sizes']['large'] }}" alt="{{ image['alt'] }}" itemprop="image" style="margin-bottom: 30px;" /></div>
+            {% endfor %}
+        </div>
+    {% endif %}
     {% include 'partials/related.html.twig' %}
     {{ comments_template() }}
 {% endblock %}

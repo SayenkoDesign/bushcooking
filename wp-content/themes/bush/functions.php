@@ -613,3 +613,14 @@ function exclude_posts_from_category( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'exclude_posts_from_category', 1 );
+
+
+function gioga_add_defer_attribute($tag, $handle) {
+	if ( is_admin() )
+	    return $tag;
+    
+    if ( 'googleapis' === $handle )
+	    return $tag;
+	return str_replace( ' src', ' defer src', $tag );
+}
+add_filter('script_loader_tag', 'gioga_add_defer_attribute', 10, 2);
