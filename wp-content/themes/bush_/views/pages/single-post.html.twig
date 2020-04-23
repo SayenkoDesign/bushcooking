@@ -1,0 +1,30 @@
+{% extends 'template/main.html.twig' %}
+{% set has_sidebar = true %}
+{% block content %}
+    <div class="row column">
+        {% if the_post_thumbnail('slider') %}
+            <div class="large-4 columns text-center">
+                    <div id="post-featured-image">
+                        {{ the_post_thumbnail('slider') }}
+                    </div>
+            </div>
+        {% endif %}
+
+        <div class="blog-conent">
+            <h1 class="entry-title">{{ the_title() }}</h1>
+            {{ the_content() }}
+        </div>
+    </div>
+    <div id="mobile-sponsored-ad" class="hide-for-medium">
+        <div class="row columns">
+            {{ do_shortcode('[sponsored_ad]') }}
+        </div>
+    </div>
+    {% include 'partials/related.html.twig' %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'partials/post-sidebar-search.html.twig' %}
+    {% include 'partials/post-sidebar-categories.html.twig' %}
+    {% include 'partials/sidebar-custom-content.html.twig' %}
+    {% include 'partials/sharethis.html.twig' %}
+{% endblock %}

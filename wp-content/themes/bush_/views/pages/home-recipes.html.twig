@@ -1,0 +1,20 @@
+{% extends 'template/main.html.twig' %}
+{% set has_sidebar = true %}
+{% block title %}
+    <div class="row column">
+        <h1 class="text-center">Recipes</h1>
+    </div>
+{% endblock %}
+{% block content %}
+    {% if content %}
+        {% include 'partials/related.html.twig' with {'related': content, 'related_title': false }%}
+        {% include 'partials/pagination.html.twig' %}
+    {% else %}
+        <h1>Nothing Found</h1>
+    {% endif %}
+{% endblock %}
+{% block sidebar %}
+    {% include 'partials/post-sidebar-search.html.twig' %}
+    {% include 'partials/post-sidebar-categories.html.twig' %}
+    {{ the_field("sidebar_content") }}
+{% endblock %}

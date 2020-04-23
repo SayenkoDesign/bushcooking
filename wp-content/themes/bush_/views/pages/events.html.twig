@@ -1,0 +1,10 @@
+{% extends 'template/main.html.twig' %}
+{% block content %}
+    {% if content %}
+      <div class="row column">
+          {{ content | raw }}
+      </div>
+    {% else %}
+        <h1>Nothing Found</h1>
+    {% endif %}
+{% endblock %}

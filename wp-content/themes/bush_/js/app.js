@@ -130,26 +130,12 @@ jQuery(function() {
     // End Recipe Lightbox
 
     var sponsored_ad = jQuery(".hide-for-small-only #sponsored-ad");
-    if(sponsored_ad.children().length){
+    //if(!sponsored_ad.find('iframe').length){
+        if(sponsored_ad.children().length > 0) {
         console.log("should be sticky");
         sponsored_ad.stick_in_parent({
             offset_top: 64,
             recalc_every: 1
         });
     }
-    
-    var pinterest_photos = jQuery(".show-for-medium.pinterest-photos");
-    if(pinterest_photos.length){
-        var offset = 64;
-        
-        if(sponsored_ad.children().length){
-            offset += sponsored_ad.height();
-        }
-        
-        pinterest_photos.stick_in_parent({
-            offset_top: offset,
-            recalc_every: 1
-        });
-    }
-    
 });

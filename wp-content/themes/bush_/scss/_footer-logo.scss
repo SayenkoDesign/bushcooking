@@ -1,0 +1,15 @@
+#footer-logo {
+  height: 50px;
+  background-color: $secondary-1;
+  background-image: url('../images/pattern.min.jpg');
+  text-align: center;
+  position: relative;
+  a {
+    position: absolute;
+    top: calc(100% - 100px);
+    right: calc(50% - 100px);
+  }
+  img {
+    width: 200px;
+  }
+}
