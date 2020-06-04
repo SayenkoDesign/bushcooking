@@ -1,0 +1,42 @@
+{% extends 'template/main.html.twig' %}
+{% block content %}
+    {% if tax_content %}
+        <section class="branded-section">
+            <div class="row taxonomy-overview" id="taxonomy-overview">
+                {% if tax_content['slides'] %}
+                <div class="large-3 columns text-center">
+                    <div class="lightbox-wrapper">
+                        <div class="positioner">
+                            <div class="close-lightbox">×</div>
+                            <div class="slick-lightbox">
+                                {% for slide in tax_content['slides'] %}
+                                    <img src="{{ slide['sizes']['light-box-slider'] }}" alt="{{ slide['alt'] }}" itemprop="image"/>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>            
+                
+                    <div class="slick">
+                        {% for slide in tax_content['slides'] %}
+                            <img class="lightbox-trigger" src="{{ slide['sizes']['slider'] }}" alt="{{ slide['alt'] }}" itemprop="image"/>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                    
+                <div class="large-9 columns">
+                    <div class="description">
+                        <h1>{{ tax_content['title'] | raw }}</h1>
+                        {{tax_content['description'] | raw }}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    {% if content %}
+        {% include 'partials/related.html.twig' with {'related': content, 'related_title': false, 'grid_sizes': [1, 2, 4] }%}
+        {% include 'partials/pagination.html.twig' %}
+    {% else %}
+        <h1>Nothing Found</h1>
+    {% endif %}
+{% endblock %}

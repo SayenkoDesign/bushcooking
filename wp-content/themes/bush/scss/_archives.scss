@@ -16,3 +16,28 @@
     }
   }
 }
+
+
+.taxonomy-overview {
+    
+    margin-bottom: rem-calc(30px);
+    
+    .slick {
+        margin-bottom: rem-calc(30);
+    }
+    
+    img {
+        background-color: $white;
+        border: 1px solid #fcdedc;
+        padding: 6px;   
+    }
+    
+    .description {
+        margin-bottom: rem-calc(30px);  
+        padding: rem-calc(0 10); 
+        
+        p {
+            font-size: rem-calc(18);   
+        }
+    }
+}
