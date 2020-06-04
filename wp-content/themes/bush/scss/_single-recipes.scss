@@ -38,6 +38,12 @@
   height: auto !important;
 }
 
+.slick:not(.slick-initialized) {
+   img:not(:first-child) {
+      display: none; 
+   }
+}
+
 
 .lightbox-wrapper {
     position: fixed;
