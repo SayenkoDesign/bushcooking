@@ -88,7 +88,7 @@ if( function_exists('acf_add_options_page') ) {
         'page_title' => 'Theme Options',
         'menu_title' => 'Theme Settings',
         'menu_slug' => 'bush-theme-general-settings',
-        'capability' => 'edit_posts',
+        'capability' => 'edit_others_posts',
         'redirect' => false
     ));
 }
