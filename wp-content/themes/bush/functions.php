@@ -623,4 +623,4 @@ function gioga_add_defer_attribute($tag, $handle) {
 	    return $tag;
 	return str_replace( ' src', ' defer src', $tag );
 }
-add_filter('script_loader_tag', 'gioga_add_defer_attribute', 10, 2);
+// add_filter('script_loader_tag', 'gioga_add_defer_attribute', 10, 2);

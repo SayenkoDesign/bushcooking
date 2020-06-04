@@ -35,7 +35,7 @@
                             {{ do_shortcode('[sponsored_ad]') }}
                         </div>
                     </div>
-                    {% if pinterest_images %}
+                    {% if pinterest_images|default(null) %}
                     <style>
                     .pinterest-photos {
                         margin-left: -7.5px!important;
