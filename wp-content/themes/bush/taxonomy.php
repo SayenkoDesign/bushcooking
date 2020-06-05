@@ -67,7 +67,7 @@ if(get_field('slider', $term)) {
 
 
 $tax_content = array(
-  'title' => $term->name,
+  'title' => get_field('custom_title', $term) ? get_field('custom_title', $term) : $term->name,
   'description' => $term->description,
   'slides' => $slides
 );
